@@ -1,14 +1,54 @@
-import React from "react";
+import React, { Component } from "react";
+import { Jumbotron, Col, Row, Container } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 // import Form from "react-bootstrap/Form";
 // import Col from "react-bootstrap/Col";
 // import Button from "react-bootstrap/Button";
 
 
-function Saved () {
+class Saved extends Component {
+    
+    handleSubmit(event) {
+        event.preventDefault()
+    
+        // console.log(this.props);
+        // console.log(this.props.history);
+    
+        // API.BooksSearch(Panels)
+        //   .then((res) => {
+        //     console.log(res)
+        //     if (res.status === 200) {
+        //       this.props.history.push('/Saved');
+        //     }
+          // })
+      }
+    
+    
+    render(){
+
+    
     return (
-        <div className="formBox">
-            
-            {/* <Form>
+
+        <div>
+            <Jumbotron fluid>
+                <Container>
+                    <h1>Here are your saved books!</h1>
+                    <p>
+                        Search for and Save books of interest!
+            </p>
+
+
+                    <Button onClick={(event) => this.handleSubmit(event)} variant="primary" type="submit" className="submitButton" block>
+                        Go home to search for more books!
+            </Button>
+
+                </Container>
+            </Jumbotron>
+
+
+            <div className="formBox">
+
+                {/* <Form>
             <Form.Text className="stepText">
                 STEP 3.
             </Form.Text>
@@ -41,8 +81,9 @@ function Saved () {
                 </div>
 
             </Form> */}
+            </div>
         </div>
-    )
+    )}
 }
 
 export default Saved;

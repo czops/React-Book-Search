@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import { Jumbotron, Col, Row, Container } from "react-bootstrap";
 
 import Home from "./components/pages/home/Home";
@@ -6,7 +7,7 @@ import Home from "./components/pages/home/Home";
 // import SearchComponent from "./components/search/Search";
 
 // import Search from "./src/components/search";
-// import Saved from "./src/components/saved";
+import Saved from "./components/saved/Saved";
 
 // import "./App.css";
 
@@ -16,53 +17,36 @@ class App extends Component {
     title: ""
   }
   
-  render() {
-    return (
-      <div className="App">
-
-        <Home/>
-  
-      </div>
-
-
-
-    );
-  }
-
-  //Don't really think router is necessary for this application
-
   // render() {
   //   return (
+  //     <div className="App">
 
-  //     <Router>
-  //       <div>
-  //         <Switch>
-  //           <Route exact path="/" component={Login} />
-  //           {/* <Route exact path="/LandingPage" render={(state) => <LandingPage {...state}/>} /> */}
-  //           <Route exact path="/Landing" render={(state) => <Landing 
-  //           masterState={this.state} 
-  //           setMasterState={this.setMasterState} 
-  //           setPanelNumber={this.setPanelNumber} 
-  //           setModelNumber={this.setModelNumber} 
-  //           setShopOrderNumber={this.setShopOrderNumber} 
-  //           setZone={this.setZone} 
-  //           setSize={this.setSize}
-  //           setMeasurement1={this.setMeasurement1} 
-  //           setMeasurement2={this.setMeasurement2}
-  //           />} />
+  //       <Home/>
+  
+  //     </div>
 
-  //           <Route exact path="/Process" component={Process} />
-  //           <Route exact path="/Measurements" render={(state) => <Measurements masterState={this.state} setMasterState={this.setMasterState} />} />
-  //           <Route exact path="/Process1" render={(state) => <Process1 masterState={this.state} setMasterState={this.setMasterState} process1CheckState={this.process1CheckState} handleInputChange={this.handleInputChange} PUTsomeStuff={this.PUTsomeStuff} />} />
-  //           <Route exact path="/Process2" render={(state) => <Process2 masterState={this.state} setMasterState={this.setMasterState} />} />
-  //           <Route exact path="/Success" component={Success} />
-  //           {/* Create route from api to pull all panels, for T&E */}
-  //           <Route component={NotFound} />
-  //         </Switch>
-  //       </div>
-  //     </Router>
+
+
   //   );
   // }
+
+
+
+  render() {
+    return (
+
+      <Router>
+        <div>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/Saved" component ={Saved} />
+          
+            {/* <Route component={NotFound} /> */}
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
 
 
 }
