@@ -1,46 +1,22 @@
 import React, { Component } from "react";
-import { Jumbotron, Col, Row, Container } from "react-bootstrap";
+// import { Jumbotron, Col, Row, Container } from "react-bootstrap";
 
-import SavedComponent from "./components/saved/Saved";
-import SearchComponent from "./components/search/Search";
+import Home from "./components/pages/home/Home";
+// import SavedComponent from "./components/saved/Saved";
+// import SearchComponent from "./components/search/Search";
 
 // import Search from "./src/components/search";
 // import Saved from "./src/components/saved";
-import logo from "./logo.svg";
-import "./App.css";
+
+// import "./App.css";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
 
-        <Jumbotron fluid>
-          <Container>
-            <h1>(React) Google Book Search!</h1>
-            <p>
-              Search for and Save books of interest!
-    </p>
-          </Container>
-        </Jumbotron>
-
-        <Container>
-          <Row>
-            <Col>
-              <SearchComponent />
-              <SavedComponent />
-            </Col>
-          </Row>
-        </Container>
-
-
-
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Home/>
+  
       </div>
 
 
