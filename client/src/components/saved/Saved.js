@@ -1,10 +1,10 @@
 import React from "react";
-import Form from "react-bootstrap/Form";
-import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
+// import Form from "react-bootstrap/Form";
+// import Col from "react-bootstrap/Col";
+// import Button from "react-bootstrap/Button";
 
 
-function Saved (props) {
+function Saved () {
     return (
         <div className="formBox">
             

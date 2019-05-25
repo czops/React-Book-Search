@@ -11,6 +11,11 @@ import Home from "./components/pages/home/Home";
 // import "./App.css";
 
 class App extends Component {
+  
+  state = {
+    title: ""
+  }
+  
   render() {
     return (
       <div className="App">
