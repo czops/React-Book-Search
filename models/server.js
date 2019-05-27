@@ -5,7 +5,7 @@ var mongoose = require("mongoose");
 var PORT = 3000;
 
 // Requiring the `User` model for accessing the `users` collection
-var User = require("./userModel.js");
+var Book = require("./bookModel.js");
 
 // Initialize Express
 var app = express();
@@ -28,7 +28,7 @@ mongoose.connect("mongodb://localhost/userdb", { useNewUrlParser: true });
 // Route to post our form submission to mongoDB via mongoose
 app.post("/submit", function(req, res) {
   // Create a new user using req.body
-  User.create(req.body)
+  Book.create(req.body)
     .then(function(dbUser) {
       // If saved successfully, send the the new User document to the client
       res.json(dbUser);
