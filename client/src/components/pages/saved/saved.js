@@ -1,13 +1,17 @@
 import React, { Component } from "react";
-import { Jumbotron, Col, Row, Container } from "react-bootstrap";
+import { Jumbotron, Col, Row, Container, Button } from "react-bootstrap";
 import NavbarComponent from "../../navbar/Navbar";
-import Button from "react-bootstrap/Button";
-// import Form from "react-bootstrap/Form";
-// import Col from "react-bootstrap/Col";
-// import Button from "react-bootstrap/Button";
+
+
+// import API from "../utils/API";
+import DeleteBtn from "../../deleteButton";
+import { List, ListItem } from "../../list";
+// import { Input, TextArea, FormBtn } from "../components/Form";
 
 
 class Saved extends Component {
+    
+
     
     handleSubmit(event) {
         event.preventDefault();
@@ -36,55 +40,35 @@ class Saved extends Component {
             <Jumbotron fluid>
                 <Container>
                     <h1>Here are your saved books!</h1>
-                    <p>
-                        Search for and Save books of interest!
-            </p>
-
-
-                    {/* <Button onClick={(event) => this.handleSubmit(event)} variant="primary" type="submit" className="submitButton" block>
-                        Go home to search for more books!
-            </Button> */}
-
                 </Container>
             </Jumbotron>
 
-
-            <div className="formBox">
-
-                {/* <Form>
-            <Form.Text className="stepText">
-                STEP 3.
-            </Form.Text>
-            <Form.Text className="sizeTitle">
-                Enter the Measurements
-            </Form.Text>
-            {props.panels.map(panel => 
-                <Form.Row className="measureBox">
-                <Form.Group as={Col} controlId="formModelNumber">
-                    <Form.Text className="processTitle"> PANEL {panel.panelNumber} <span className="panelNumberEnter"></span></Form.Text>
-                    <Form.Row>
-                        <Form.Group>
-                            <Form.Label>Measurement 1</Form.Label>
-                            <Form.Control onChange={(event) => props.setMeasurement1(event, panel.panelNumber)} value={panel.m1} placeholder="Enter #" className="measurement1"/>
-                        </Form.Group>
-                        <Form.Group className="secondMeasure">
-                            <Form.Label>Measurement 2</Form.Label>
-                            <Form.Control onChange={(event) => props.setMeasurement2(event, panel.panelNumber)} value={panel.m2} placeholder="Enter #" className="measurement2"/>
-                        </Form.Group>
-                    
-                    </Form.Row>
-                    </Form.Group>
-                    </Form.Row>
-                )}
-         
-                <div className="buttonBox">
-                    <Button variant="primary" type="submit" className="submitButton" block>
-                        SUBMIT
-                    </Button>
-                </div>
-
-            </Form> */}
-            </div>
+            <Container fluid>
+        <Row>
+          
+          <Col size="md-12 sm-12">
+            <Jumbotron>
+              <h1>Books On My List</h1>
+            </Jumbotron>
+            {/* {this.state.books.length ? (
+              <List>
+                {this.state.books.map(book => (
+                  <ListItem key={book._id}>
+                    <a href={"/books/" + book._id}>
+                      <strong>
+                        {book.title} by {book.author}
+                      </strong>
+                    </a>
+                    <DeleteBtn />
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+              <h3>No Results to Display</h3>
+            )} */}
+          </Col>
+        </Row>
+      </Container>
 
 
         </div>

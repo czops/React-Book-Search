@@ -7,7 +7,7 @@ import Home from "./components/pages/home/Home";
 // import SearchComponent from "./components/search/Search";
 
 // import Search from "./src/components/search";
-import Saved from "./components/saved/Saved";
+import Saved from "./components/pages/saved/saved";
 
 // import "./App.css";
 
