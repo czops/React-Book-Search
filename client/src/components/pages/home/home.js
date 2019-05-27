@@ -3,6 +3,7 @@ import { Jumbotron, Col, Row, Container } from "react-bootstrap";
 
 import SearchComponent from "../../search/SearchStuff";
 import DisplayComponent from "../../display/Display";
+import NavbarComponent from "../../navbar/Navbar";
 import Button from "react-bootstrap/Button";
 
 
@@ -13,10 +14,10 @@ import Button from "react-bootstrap/Button";
 class Home extends Component {
 
 
-  
-  handleSubmit(event) {
-    event.preventDefault()
 
+  handleSubmit(event) {
+    event.preventDefault();
+    this.push('/Saved');
     // console.log(this.props);
     // console.log(this.props.history);
 
@@ -26,13 +27,13 @@ class Home extends Component {
     //     if (res.status === 200) {
     //       this.props.history.push('/Saved');
     //     }
-      // })
+    // })
   }
 
   render() {
     return (
       <div className="Home">
-
+        <NavbarComponent/>  
         <Jumbotron fluid>
           <Container>
             <h1>(React) Google Book Search!</h1>
@@ -40,10 +41,10 @@ class Home extends Component {
               Search for and Save books of interest!
             </p>
 
-
+{/* 
             <Button onClick={(event) => this.handleSubmit(event)} variant="primary" type="submit" className="submitButton" block>
               Go to your saved books!
-            </Button>
+            </Button> */}
 
           </Container>
         </Jumbotron>

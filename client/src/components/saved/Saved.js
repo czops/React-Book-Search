@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Jumbotron, Col, Row, Container } from "react-bootstrap";
+import NavbarComponent from "../navbar/Navbar";
 import Button from "react-bootstrap/Button";
 // import Form from "react-bootstrap/Form";
 // import Col from "react-bootstrap/Col";
@@ -9,7 +10,8 @@ import Button from "react-bootstrap/Button";
 class Saved extends Component {
     
     handleSubmit(event) {
-        event.preventDefault()
+        event.preventDefault();
+        this.push('/');
     
         // console.log(this.props);
         // console.log(this.props.history);
@@ -30,6 +32,7 @@ class Saved extends Component {
     return (
 
         <div>
+            <NavbarComponent/>
             <Jumbotron fluid>
                 <Container>
                     <h1>Here are your saved books!</h1>
@@ -38,9 +41,9 @@ class Saved extends Component {
             </p>
 
 
-                    <Button onClick={(event) => this.handleSubmit(event)} variant="primary" type="submit" className="submitButton" block>
+                    {/* <Button onClick={(event) => this.handleSubmit(event)} variant="primary" type="submit" className="submitButton" block>
                         Go home to search for more books!
-            </Button>
+            </Button> */}
 
                 </Container>
             </Jumbotron>
@@ -82,6 +85,8 @@ class Saved extends Component {
 
             </Form> */}
             </div>
+
+
         </div>
     )}
 }
