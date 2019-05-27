@@ -3,7 +3,8 @@ import { Jumbotron, Col, Row, Container, Button } from "react-bootstrap";
 import NavbarComponent from "../../navbar/Navbar";
 
 
-// import API from "../utils/API";
+
+import API from "../../../utils/API";
 import DeleteBtn from "../../deleteButton";
 import { List, ListItem } from "../../list";
 // import { Input, TextArea, FormBtn } from "../components/Form";
@@ -11,8 +12,21 @@ import { List, ListItem } from "../../list";
 
 class Saved extends Component {
     
+    state = {
+        books: []
+      }
 
+      componentDidMount() {
+        this.loadBooks();
+      }
     
+      loadBooks = () => {
+        API.getBooks()
+          .then(res => this.setState({ books: res.data }))
+          .catch(err => console.log(err));
+      };
+
+
     handleSubmit(event) {
         event.preventDefault();
         this.push('/');
@@ -48,9 +62,10 @@ class Saved extends Component {
           
           <Col size="md-12 sm-12">
             <Jumbotron>
-              <h1>Books On My List</h1>
+              <h1>Books On My List:</h1>
             </Jumbotron>
-            {/* {this.state.books.length ? (
+
+            {this.state.books.length ? (
               <List>
                 {this.state.books.map(book => (
                   <ListItem key={book._id}>
@@ -65,7 +80,7 @@ class Saved extends Component {
               </List>
             ) : (
               <h3>No Results to Display</h3>
-            )} */}
+            )}
           </Col>
         </Row>
       </Container>

@@ -15,7 +15,7 @@ function Display() {
                 
    {/* map function here */}
                 
-                <Card.Title className="cardTitle"> Data Entered Successfully!</Card.Title>
+                <Card.Title className="cardTitle"> Results</Card.Title>
                 
                 <Card.Body className="cardMessage"> Books! </Card.Body>
                 <Button variant="primary" type="submit" className="homeButton float-right"> Save this book! </Button>

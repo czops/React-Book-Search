@@ -13,10 +13,6 @@ import Saved from "./components/pages/saved/saved";
 
 class App extends Component {
   
-  state = {
-    title: ""
-  }
-  
   // render() {
   //   return (
   //     <div className="App">
