@@ -18,8 +18,29 @@ if (process.env.NODE_ENV === "production") {
 // Define API routes here
 // app.use(routes);
 
+
+//-------------Database configuration here------------------
+var databaseUri = 'mongodb://localhost/googlebooks';
+
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks");
+if (process.env.MONGODB_URI) {
+  //This executes in Heroku
+  mongoose.connect(process.env.MONGODB_URI);
+} else {
+  //This executes locally
+  mongoose.connect(databaseUri);
+}
+
+
+var db = mongoose.connection;
+
+db.on('error', function(err){
+  console.log('Mongoose Error: ', err);
+});
+
+db.once('open', function(err){
+  console.log('Mongoose connection successsful!');
+});
 
 
 // Send every other request to the React app
