@@ -1,7 +1,7 @@
 {
   "name": "mern",
-  "version": "1.0.0",
-  "description": "Mern Demo",
+  "version": "0.1.0",
+  "description": "search for books from googles api and save them if you want to",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -12,7 +12,7 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
-  "author": "",
+  "author": "czops",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^4.1.0",
@@ -24,6 +24,7 @@
     "express": "^4.16.3",
     "if-env": "^1.0.4",
     "mongoose": "^5.5.7",
+    "react-axios": "^2.0.3",
     "react-bootstrap": "^1.0.0-beta.8",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0"
